@@ -1,0 +1,9 @@
+{
+  "random_forest": "random_forest.joblib",
+  "xgboost": "xgboost.joblib",
+  "codificador_categorias_ataque": "codificador_categorias_ataque.joblib",
+  "umbral_rf_ataque": 0.55,
+  "regla_rf": "probabilidad_ataque > umbral_rf_ataque",
+  "seleccion_umbral": "validacion",
+  "columnas_transformadas": "src/ids_preparado/columnas_transformadas.json"
+}

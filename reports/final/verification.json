@@ -1,0 +1,38 @@
+{
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 18,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 6.46
+  },
+  "commands_passed": [
+    "python -m pip install -e . --no-deps",
+    "python -m pip check",
+    "python src/preparar_datos_ids.py",
+    "python src/entrenar_ids.py",
+    "python src/evaluar_ids.py --split val",
+    "python src/evaluar_ids.py --split test",
+    "python src/predecir_ids.py --out reports/final/smoke_predictions.json",
+    "python src/analizar_umbral_rf.py --out reports/final/thresholds_reload.csv",
+    "python -m compileall -q src tests"
+  ],
+  "additional_checks": {
+    "inference_from_tmp_with_absolute_paths": true,
+    "fresh_process_with_fit_blocked": true,
+    "raw_dataset_hashes_unchanged": true,
+    "source_hashes_match_trained_artifact": true,
+    "active_document_links_exist": true,
+    "reload_confusion_matrices_identical": true,
+    "reload_metric_abs_tolerance": 1e-08,
+    "validation_pr_auc_absolute_difference": 1.27675647831893e-14,
+    "validation_ap_absolute_difference": 2.282783961859991e-10,
+    "threshold_reload_matches": true
+  },
+  "limitations": [
+    "No new independent holdout available",
+    "Clean environment installation not performed",
+    "Real traffic feature extraction parity not implemented or validated"
+  ],
+  "status": "offline ML verified; independent validation pending"
+}

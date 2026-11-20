@@ -1,0 +1,204 @@
+{
+  "version_xgboost": "3.4.1",
+  "semilla": 42,
+  "arboles_por_modelo": 300,
+  "umbral_rf_ataque": 0.55,
+  "regla_umbral_rf": "probabilidad_ataque > umbral",
+  "clases_xgboost": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "validacion_random_forest_binaria": {
+    "0": {
+      "precision": 0.9369775523621677,
+      "recall": 0.9191928499032526,
+      "f1-score": 0.928,
+      "support": 10853.0
+    },
+    "1": {
+      "precision": 0.9607886971295717,
+      "recall": 0.9697202166064982,
+      "f1-score": 0.9652337959843686,
+      "support": 22160.0
+    },
+    "accuracy": 0.9531093811528791,
+    "macro avg": {
+      "precision": 0.9488831247458698,
+      "recall": 0.9444565332548753,
+      "f1-score": 0.9466168979921843,
+      "support": 33013.0
+    },
+    "weighted avg": {
+      "precision": 0.9529608004173482,
+      "recall": 0.9531093811528791,
+      "f1-score": 0.9529932123410053,
+      "support": 33013.0
+    }
+  },
+  "conteos_rf_validacion": {
+    "verdaderos_negativos": 9976,
+    "falsas_alarmas": 877,
+    "ataques_omitidos": 671,
+    "ataques_detectados": 21489,
+    "tasa_falsas_alarmas": 0.08080715009674744,
+    "tasa_ataques_omitidos": 0.030279783393501805
+  },
+  "validacion_xgboost_solo_ataques_detectados_por_etiqueta_real": {
+    "Analysis": {
+      "precision": 0.1412639405204461,
+      "recall": 0.4175824175824176,
+      "f1-score": 0.2111111111111111,
+      "support": 364.0
+    },
+    "Backdoor": {
+      "precision": 0.059472934472934474,
+      "recall": 0.571917808219178,
+      "f1-score": 0.10774193548387097,
+      "support": 292.0
+    },
+    "DoS": {
+      "precision": 0.3813049514113836,
+      "recall": 0.3472397808680995,
+      "f1-score": 0.3634759594177327,
+      "support": 2373.0
+    },
+    "Exploits": {
+      "precision": 0.9043387349712494,
+      "recall": 0.5304307833818795,
+      "f1-score": 0.6686636389989371,
+      "support": 6523.0
+    },
+    "Fuzzers": {
+      "precision": 0.9636923076923077,
+      "recall": 0.8951128893969705,
+      "f1-score": 0.9281375018521263,
+      "support": 3499.0
+    },
+    "Generic": {
+      "precision": 0.9981695297099409,
+      "recall": 0.9784679089026915,
+      "f1-score": 0.9882205339095281,
+      "support": 7245.0
+    },
+    "Reconnaissance": {
+      "precision": 0.8129543952412426,
+      "recall": 0.7611386138613861,
+      "f1-score": 0.7861936720997124,
+      "support": 1616.0
+    },
+    "Shellcode": {
+      "precision": 0.541025641025641,
+      "recall": 0.9504504504504504,
+      "f1-score": 0.6895424836601307,
+      "support": 222.0
+    },
+    "Worms": {
+      "precision": 0.5,
+      "recall": 0.6538461538461539,
+      "f1-score": 0.5666666666666667,
+      "support": 26.0
+    },
+    "accuracy": 0.7347472924187726,
+    "macro avg": {
+      "precision": 0.5891358261161274,
+      "recall": 0.6784652007232475,
+      "f1-score": 0.5899726114666461,
+      "support": 22160.0
+    },
+    "weighted avg": {
+      "precision": 0.8539333940213745,
+      "recall": 0.7347472924187726,
+      "f1-score": 0.7751822240283492,
+      "support": 22160.0
+    }
+  },
+  "validacion_cascada_extremo_a_extremo": {
+    "Normal": {
+      "precision": 0.9369775523621677,
+      "recall": 0.9191928499032526,
+      "f1-score": 0.928,
+      "support": 10853.0
+    },
+    "Analysis": {
+      "precision": 0.100664767331434,
+      "recall": 0.29120879120879123,
+      "f1-score": 0.1496118560338744,
+      "support": 364.0
+    },
+    "Backdoor": {
+      "precision": 0.059430604982206404,
+      "recall": 0.571917808219178,
+      "f1-score": 0.10767246937459704,
+      "support": 292.0
+    },
+    "DoS": {
+      "precision": 0.3804247460757156,
+      "recall": 0.3472397808680995,
+      "f1-score": 0.3630755673055739,
+      "support": 2373.0
+    },
+    "Exploits": {
+      "precision": 0.8910788381742739,
+      "recall": 0.5267514947110226,
+      "f1-score": 0.6621061759321707,
+      "support": 6523.0
+    },
+    "Fuzzers": {
+      "precision": 0.750293427230047,
+      "recall": 0.7307802229208346,
+      "f1-score": 0.7404082814535978,
+      "support": 3499.0
+    },
+    "Generic": {
+      "precision": 0.9980290018302126,
+      "recall": 0.9784679089026915,
+      "f1-score": 0.9881516587677726,
+      "support": 7245.0
+    },
+    "Reconnaissance": {
+      "precision": 0.8070866141732284,
+      "recall": 0.7611386138613861,
+      "f1-score": 0.7834394904458599,
+      "support": 1616.0
+    },
+    "Shellcode": {
+      "precision": 0.51338199513382,
+      "recall": 0.9504504504504504,
+      "f1-score": 0.6666666666666666,
+      "support": 222.0
+    },
+    "Worms": {
+      "precision": 0.4857142857142857,
+      "recall": 0.6538461538461539,
+      "f1-score": 0.5573770491803278,
+      "support": 26.0
+    },
+    "accuracy": 0.7758458788961924,
+    "macro avg": {
+      "precision": 0.5923081833007391,
+      "recall": 0.6730994074891861,
+      "f1-score": 0.5946509215160442,
+      "support": 33013.0
+    },
+    "weighted avg": {
+      "precision": 0.8549697523578152,
+      "recall": 0.7758458788961924,
+      "f1-score": 0.8032095643502025,
+      "support": 33013.0
+    }
+  },
+  "notas": [
+    "Los resultados son de validación, no de la prueba oficial.",
+    "El informe condicional de XGBoost usa ataques reales de validación para aislar la segunda etapa.",
+    "La matriz de cascada mide el sistema completo e incluye ataques omitidos por Random Forest como Normal.",
+    "El balanceo se hace con pesos durante el ajuste y no modifica validación ni prueba.",
+    "El umbral se selecciona con validación; el test oficial no se usa aquí."
+  ]
+}

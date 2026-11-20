@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "sha256": {
+    "pipeline.joblib": "678535b9c5381a733916e131c10023b4b05ef2c15b4b01d2935656eb91ff5632",
+    "metadata.json": "8ae618bd081a9fde5f02d8364413949e7fa3dee6d7e8d2141ee059ba9f93b551",
+    "feature_contract.json": "bc1d11505a49623df794714bc0757eadc2405073d310dd767fad66f96174dffd"
+  }
+}
