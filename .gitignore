@@ -1,0 +1,25 @@
+# Entornos y código generado
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+.idea/
+.vscode/
+.DS_Store
+*.tmp
+*.log
+
+# Originales conservados localmente; instrucciones y hashes en data/README.md.
+data/raw/*.csv
+# Reproducibles a partir de originales y configuración.
+data/processed/*
+!data/processed/.gitkeep
+# Pesos pesados se distribuyen junto al código como artefactos, no en Git.
+models/**/*.joblib
+# Las métricas, contratos, ejemplos y manifiestos sí se versionan.
+reports/final/predictions_*.csv
