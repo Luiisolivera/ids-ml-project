@@ -1,0 +1,522 @@
+{
+  "archivos": {
+    "train": "data/raw/UNSW_NB15_training-set.csv",
+    "test": "data/raw/UNSW_NB15_testing-set.csv"
+  },
+  "filas": {
+    "train_oficial_original": 175341,
+    "train_retiradas_por_solapamiento_con_test": 10279,
+    "train_restantes": 165062,
+    "train_modelo": 132049,
+    "validacion": 33013,
+    "prueba_oficial_sin_modificar": 82332
+  },
+  "grupos_caracteristicas_train_retirados_por_solapamiento": 1302,
+  "duplicados_train_original": {
+    "filas": 175341,
+    "grupos_caracteristicas": 101040,
+    "filas_repetidas_por_caracteristicas": 74301,
+    "grupos_con_label_binario_conflictivo": 229,
+    "filas_en_grupos_con_label_binario_conflictivo": 940,
+    "grupos_con_attack_cat_multiple": 1772,
+    "filas_en_grupos_con_attack_cat_multiple": 30528
+  },
+  "duplicados_train_despues_de_purgar_test": {
+    "filas": 165062,
+    "grupos_caracteristicas": 99738,
+    "filas_repetidas_por_caracteristicas": 65324,
+    "grupos_con_label_binario_conflictivo": 131,
+    "filas_en_grupos_con_label_binario_conflictivo": 429,
+    "grupos_con_attack_cat_multiple": 1536,
+    "filas_en_grupos_con_attack_cat_multiple": 28292
+  },
+  "duplicados_test_oficial": {
+    "filas": 82332,
+    "grupos_caracteristicas": 53946,
+    "filas_repetidas_por_caracteristicas": 28386,
+    "grupos_con_label_binario_conflictivo": 6,
+    "filas_en_grupos_con_label_binario_conflictivo": 14,
+    "grupos_con_attack_cat_multiple": 575,
+    "filas_en_grupos_con_attack_cat_multiple": 8809
+  },
+  "grupos_caracteristicas_por_particion": {
+    "train": 79789,
+    "validacion": 19949,
+    "test": 53946
+  },
+  "sin_solapamiento_de_caracteristicas": true,
+  "caracteristicas_originales": [
+    "dur",
+    "proto",
+    "service",
+    "state",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "columnas_categoricas": [
+    "proto",
+    "service",
+    "state"
+  ],
+  "columnas_numericas": [
+    "dur",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "stcpb",
+    "dtcpb",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "trans_depth",
+    "response_body_len",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "is_ftp_login",
+    "ct_ftp_cmd",
+    "ct_flw_http_mthd",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "is_sm_ips_ports"
+  ],
+  "columnas_transformadas": 194,
+  "seed": 42,
+  "split": "first fold StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=42)",
+  "raw_sha256": {
+    "data/raw/UNSW_NB15_training-set.csv": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+    "data/raw/UNSW_NB15_testing-set.csv": "734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559"
+  },
+  "calidad": {
+    "nulos_train": 0,
+    "nulos_test": 0,
+    "infinitos": 0,
+    "tipos_originales": {
+      "id": "int64",
+      "dur": "float64",
+      "proto": "str",
+      "service": "str",
+      "state": "str",
+      "spkts": "int64",
+      "dpkts": "int64",
+      "sbytes": "int64",
+      "dbytes": "int64",
+      "rate": "float64",
+      "sttl": "int64",
+      "dttl": "int64",
+      "sload": "float64",
+      "dload": "float64",
+      "sloss": "int64",
+      "dloss": "int64",
+      "sinpkt": "float64",
+      "dinpkt": "float64",
+      "sjit": "float64",
+      "djit": "float64",
+      "swin": "int64",
+      "stcpb": "int64",
+      "dtcpb": "int64",
+      "dwin": "int64",
+      "tcprtt": "float64",
+      "synack": "float64",
+      "ackdat": "float64",
+      "smean": "int64",
+      "dmean": "int64",
+      "trans_depth": "int64",
+      "response_body_len": "int64",
+      "ct_srv_src": "int64",
+      "ct_state_ttl": "int64",
+      "ct_dst_ltm": "int64",
+      "ct_src_dport_ltm": "int64",
+      "ct_dst_sport_ltm": "int64",
+      "ct_dst_src_ltm": "int64",
+      "is_ftp_login": "int64",
+      "ct_ftp_cmd": "int64",
+      "ct_flw_http_mthd": "int64",
+      "ct_src_ltm": "int64",
+      "ct_srv_dst": "int64",
+      "is_sm_ips_ports": "int64",
+      "attack_cat": "str",
+      "label": "int64"
+    },
+    "cuantiles_numericos_train": {
+      "dur": {
+        "0.0": 0.0,
+        "0.01": 1e-06,
+        "0.5": 0.005289,
+        "0.99": 47.485291,
+        "1.0": 59.999989
+      },
+      "spkts": {
+        "0.0": 1.0,
+        "0.01": 2.0,
+        "0.5": 4.0,
+        "0.99": 234.0,
+        "1.0": 9616.0
+      },
+      "dpkts": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 2.0,
+        "0.99": 438.0,
+        "1.0": 10974.0
+      },
+      "sbytes": {
+        "0.0": 28.0,
+        "0.01": 78.0,
+        "0.5": 534.0,
+        "0.99": 74077.40000000008,
+        "1.0": 12965233.0
+      },
+      "dbytes": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 178.0,
+        "0.99": 501566.0,
+        "1.0": 14655550.0
+      },
+      "rate": {
+        "0.0": 0.0,
+        "0.01": 0.06336815999999999,
+        "0.5": 2918.287859,
+        "0.99": 1000000.003,
+        "1.0": 1000000.003
+      },
+      "sttl": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 254.0,
+        "0.99": 254.0,
+        "1.0": 255.0
+      },
+      "dttl": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 29.0,
+        "0.99": 252.0,
+        "1.0": 254.0
+      },
+      "sload": {
+        "0.0": 0.0,
+        "0.01": 6.134929,
+        "0.5": 706209.6875,
+        "0.99": 800000000.0,
+        "1.0": 5600000000.0
+      },
+      "dload": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 2293.331543,
+        "0.99": 14864772.520000027,
+        "1.0": 22422730.0
+      },
+      "sloss": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 38.0,
+        "1.0": 4803.0
+      },
+      "dloss": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 197.0,
+        "1.0": 5484.0
+      },
+      "sinpkt": {
+        "0.0": 0.0,
+        "0.01": 0.001,
+        "0.5": 0.425966,
+        "0.99": 10000.874,
+        "1.0": 84371.496
+      },
+      "dinpkt": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.008,
+        "0.99": 469.54727736000353,
+        "1.0": 56716.824
+      },
+      "sjit": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 11.6607,
+        "0.99": 31861.105026800546,
+        "1.0": 1460480.016
+      },
+      "djit": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 9915.722124440066,
+        "1.0": 289388.2697
+      },
+      "swin": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 255.0,
+        "1.0": 255.0
+      },
+      "stcpb": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 4205439105.9200006,
+        "1.0": 4294958913.0
+      },
+      "dtcpb": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 4203160321.12,
+        "1.0": 4294881924.0
+      },
+      "dwin": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 255.0,
+        "1.0": 255.0
+      },
+      "tcprtt": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 0.279305,
+        "1.0": 2.518893
+      },
+      "synack": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 0.15724936000000006,
+        "1.0": 2.100352
+      },
+      "ackdat": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 0.1466420800000002,
+        "1.0": 1.520884
+      },
+      "smean": {
+        "0.0": 28.0,
+        "0.01": 45.0,
+        "0.5": 73.0,
+        "0.99": 1137.0,
+        "1.0": 1504.0
+      },
+      "dmean": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 44.0,
+        "0.99": 1252.0,
+        "1.0": 1458.0
+      },
+      "trans_depth": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 1.0,
+        "1.0": 172.0
+      },
+      "response_body_len": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 4237.560000000012,
+        "1.0": 6558056.0
+      },
+      "ct_srv_src": {
+        "0.0": 1.0,
+        "0.01": 1.0,
+        "0.5": 5.0,
+        "0.99": 42.0,
+        "1.0": 63.0
+      },
+      "ct_state_ttl": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 1.0,
+        "0.99": 6.0,
+        "1.0": 6.0
+      },
+      "ct_dst_ltm": {
+        "0.0": 1.0,
+        "0.01": 1.0,
+        "0.5": 2.0,
+        "0.99": 34.0,
+        "1.0": 51.0
+      },
+      "ct_src_dport_ltm": {
+        "0.0": 1.0,
+        "0.01": 1.0,
+        "0.5": 1.0,
+        "0.99": 34.0,
+        "1.0": 51.0
+      },
+      "ct_dst_sport_ltm": {
+        "0.0": 1.0,
+        "0.01": 1.0,
+        "0.5": 1.0,
+        "0.99": 18.0,
+        "1.0": 46.0
+      },
+      "ct_dst_src_ltm": {
+        "0.0": 1.0,
+        "0.01": 1.0,
+        "0.5": 3.0,
+        "0.99": 41.0,
+        "1.0": 65.0
+      },
+      "is_ftp_login": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 1.0,
+        "1.0": 4.0
+      },
+      "ct_ftp_cmd": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 1.0,
+        "1.0": 4.0
+      },
+      "ct_flw_http_mthd": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 1.0,
+        "1.0": 30.0
+      },
+      "ct_src_ltm": {
+        "0.0": 1.0,
+        "0.01": 1.0,
+        "0.5": 3.0,
+        "0.99": 34.0,
+        "1.0": 60.0
+      },
+      "ct_srv_dst": {
+        "0.0": 1.0,
+        "0.01": 1.0,
+        "0.5": 4.0,
+        "0.99": 41.0,
+        "1.0": 62.0
+      },
+      "is_sm_ips_ports": {
+        "0.0": 0.0,
+        "0.01": 0.0,
+        "0.5": 0.0,
+        "0.99": 0.0,
+        "1.0": 1.0
+      }
+    },
+    "outliers": "No se recortan extremos: pueden representar ataques; estadísticas solo de train.",
+    "categorias_desconocidas": {
+      "val": {
+        "proto": 0,
+        "service": 0,
+        "state": 0
+      },
+      "test": {
+        "proto": 0,
+        "service": 0,
+        "state": 5
+      }
+    }
+  },
+  "clases_entrenamiento": {
+    "Normal": 43408,
+    "Generic": 28981,
+    "Exploits": 26095,
+    "Fuzzers": 13994,
+    "DoS": 9489,
+    "Reconnaissance": 6464,
+    "Analysis": 1458,
+    "Backdoor": 1169,
+    "Shellcode": 888,
+    "Worms": 103
+  },
+  "clases_validacion": {
+    "Normal": 10853,
+    "Generic": 7245,
+    "Exploits": 6523,
+    "Fuzzers": 3499,
+    "DoS": 2373,
+    "Reconnaissance": 1616,
+    "Analysis": 364,
+    "Backdoor": 292,
+    "Shellcode": 222,
+    "Worms": 26
+  },
+  "clases_prueba": {
+    "Normal": 37000,
+    "Generic": 18871,
+    "Exploits": 11132,
+    "Fuzzers": 6062,
+    "DoS": 4089,
+    "Reconnaissance": 3496,
+    "Analysis": 677,
+    "Backdoor": 583,
+    "Shellcode": 378,
+    "Worms": 44
+  },
+  "nota": "Las filas del train oficial cuyas características aparecen en test se excluyen. El train restante se divide por grupos de características, de modo que filas idénticas no crucen train/validación. Test se conserva completo; sus etiquetas no se usan para ajustar el preprocesador ni los modelos."
+}

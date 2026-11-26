@@ -1,0 +1,20 @@
+[
+  {
+    "label": 0,
+    "attack_cat": "Normal",
+    "probability_attack": 0.3679999493558066,
+    "unknown_categories": []
+  },
+  {
+    "label": 1,
+    "attack_cat": "Reconnaissance",
+    "probability_attack": 0.9533612567400316,
+    "unknown_categories": []
+  },
+  {
+    "label": 0,
+    "attack_cat": "Normal",
+    "probability_attack": 0.2500361945399132,
+    "unknown_categories": []
+  }
+]

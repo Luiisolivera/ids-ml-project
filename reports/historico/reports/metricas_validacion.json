@@ -1,0 +1,193 @@
+{
+  "version_xgboost": "3.4.1",
+  "semilla": 42,
+  "arboles_por_modelo": 300,
+  "clases_xgboost": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "validacion_random_forest_binaria": {
+    "0": {
+      "precision": 0.9687332977017638,
+      "recall": 0.9797297297297297,
+      "f1-score": 0.9742004837409298,
+      "support": 7400.0
+    },
+    "1": {
+      "precision": 0.9833017922742959,
+      "recall": 0.9741921252895114,
+      "f1-score": 0.9787257617728532,
+      "support": 9067.0
+    },
+    "accuracy": 0.9766806339952633,
+    "macro avg": {
+      "precision": 0.9760175449880298,
+      "recall": 0.9769609275096205,
+      "f1-score": 0.9764631227568915,
+      "support": 16467.0
+    },
+    "weighted avg": {
+      "precision": 0.9767549495077484,
+      "recall": 0.9766806339952633,
+      "f1-score": 0.9766921759687461,
+      "support": 16467.0
+    }
+  },
+  "validacion_xgboost_solo_ataques_detectados_por_etiqueta_real": {
+    "Analysis": {
+      "precision": 0.04778156996587031,
+      "recall": 0.1037037037037037,
+      "f1-score": 0.06542056074766354,
+      "support": 135.0
+    },
+    "Backdoor": {
+      "precision": 0.06841046277665996,
+      "recall": 0.2905982905982906,
+      "f1-score": 0.11074918566775244,
+      "support": 117.0
+    },
+    "DoS": {
+      "precision": 0.4294478527607362,
+      "recall": 0.5990220048899756,
+      "f1-score": 0.5002552322613578,
+      "support": 818.0
+    },
+    "Exploits": {
+      "precision": 0.8621323529411765,
+      "recall": 0.6317916479568927,
+      "f1-score": 0.7292044571132418,
+      "support": 2227.0
+    },
+    "Fuzzers": {
+      "precision": 0.9319526627218935,
+      "recall": 0.7797029702970297,
+      "f1-score": 0.8490566037735849,
+      "support": 1212.0
+    },
+    "Generic": {
+      "precision": 0.9964864864864865,
+      "recall": 0.9769475357710652,
+      "f1-score": 0.9866202836499867,
+      "support": 3774.0
+    },
+    "Reconnaissance": {
+      "precision": 0.8622222222222222,
+      "recall": 0.8326180257510729,
+      "f1-score": 0.8471615720524017,
+      "support": 699.0
+    },
+    "Shellcode": {
+      "precision": 0.5384615384615384,
+      "recall": 0.7368421052631579,
+      "f1-score": 0.6222222222222222,
+      "support": 76.0
+    },
+    "Worms": {
+      "precision": 0.7272727272727273,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.8,
+      "support": 9.0
+    },
+    "accuracy": 0.7966251240763207,
+    "macro avg": {
+      "precision": 0.6071297639565901,
+      "recall": 0.6489016859022309,
+      "f1-score": 0.6122989019431345,
+      "support": 9067.0
+    },
+    "weighted avg": {
+      "precision": 0.8631454860118389,
+      "recall": 0.7966251240763207,
+      "f1-score": 0.8221189939811618,
+      "support": 9067.0
+    }
+  },
+  "validacion_cascada_extremo_a_extremo": {
+    "Normal": {
+      "precision": 0.9687332977017638,
+      "recall": 0.9797297297297297,
+      "f1-score": 0.9742004837409298,
+      "support": 7400.0
+    },
+    "Analysis": {
+      "precision": 0.04778156996587031,
+      "recall": 0.1037037037037037,
+      "f1-score": 0.06542056074766354,
+      "support": 135.0
+    },
+    "Backdoor": {
+      "precision": 0.06841046277665996,
+      "recall": 0.2905982905982906,
+      "f1-score": 0.11074918566775244,
+      "support": 117.0
+    },
+    "DoS": {
+      "precision": 0.4273204903677758,
+      "recall": 0.5965770171149144,
+      "f1-score": 0.49795918367346936,
+      "support": 818.0
+    },
+    "Exploits": {
+      "precision": 0.8504034761018001,
+      "recall": 0.6151773686573866,
+      "f1-score": 0.7139134966128192,
+      "support": 2227.0
+    },
+    "Fuzzers": {
+      "precision": 0.8528784648187633,
+      "recall": 0.6600660066006601,
+      "f1-score": 0.7441860465116279,
+      "support": 1212.0
+    },
+    "Generic": {
+      "precision": 0.9964836353800378,
+      "recall": 0.9761526232114467,
+      "f1-score": 0.9862133583188328,
+      "support": 3774.0
+    },
+    "Reconnaissance": {
+      "precision": 0.8475073313782991,
+      "recall": 0.82689556509299,
+      "f1-score": 0.837074583635047,
+      "support": 699.0
+    },
+    "Shellcode": {
+      "precision": 0.4636363636363636,
+      "recall": 0.6710526315789473,
+      "f1-score": 0.5483870967741935,
+      "support": 76.0
+    },
+    "Worms": {
+      "precision": 0.6153846153846154,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.7272727272727273,
+      "support": 9.0
+    },
+    "accuracy": 0.8670067407542358,
+    "macro avg": {
+      "precision": 0.613853970751195,
+      "recall": 0.6608841825176958,
+      "f1-score": 0.6205376722955063,
+      "support": 16467.0
+    },
+    "weighted avg": {
+      "precision": 0.9020512558799856,
+      "recall": 0.8670067407542358,
+      "f1-score": 0.8796592998018551,
+      "support": 16467.0
+    }
+  },
+  "notas": [
+    "Los resultados son de validación, no de la prueba oficial.",
+    "El informe condicional de XGBoost usa ataques reales de validación para aislar la segunda etapa.",
+    "La matriz de cascada mide el sistema completo e incluye ataques omitidos por Random Forest como Normal.",
+    "El balanceo se hace con pesos durante el ajuste y no modifica validación ni prueba."
+  ]
+}

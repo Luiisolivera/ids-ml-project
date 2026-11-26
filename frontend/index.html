@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDS — Monitor de Seguridad de Red</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="shield-icon" aria-hidden="true">🛡️</span>
+      <div>
+        <h1>IDS basado en Machine Learning</h1>
+        <p class="subtitle">Monitor de seguridad de red para el equipo de TI</p>
+      </div>
+    </div>
+    <div class="topbar-status" id="readiness-pill">
+      <span class="status-dot" id="status-dot"></span>
+      <span id="status-text">Verificando sistema...</span>
+    </div>
+  </header>
+
+  <section class="audit-banner" role="region" aria-label="Aviso de versión MVP">
+    <strong>⚠️ Versión MVP:</strong>
+    verifique cada alerta antes de actuar. En pruebas el sistema generó falsas alarmas sobre tráfico normal
+    (FPR diagnóstico: 23.61 %). No hay captura de tráfico en vivo: los flujos se analizan manualmente.
+  </section>
+
+  <main class="container">
+    <section class="kpi-grid" aria-label="Resumen de alertas">
+      <article class="kpi-card kpi-alert-highlight">
+        <span class="kpi-label">Alertas totales</span>
+        <strong class="kpi-value" id="kpi-total-alerts">0</strong>
+      </article>
+      <article class="kpi-card">
+        <span class="kpi-label">Tipo de ataque más frecuente</span>
+        <strong class="kpi-value" id="kpi-top-category">—</strong>
+      </article>
+      <article class="kpi-card">
+        <span class="kpi-label">Última alerta</span>
+        <strong class="kpi-value" id="kpi-last-alert">—</strong>
+      </article>
+    </section>
+
+    <nav class="tabs" role="tablist" aria-label="Secciones del monitor">
+      <button class="tab-btn active" data-tab="tab-alertas" role="tab" aria-selected="true">
+        🚨 Alertas
+      </button>
+      <button class="tab-btn" data-tab="tab-analizar" role="tab" aria-selected="false">
+        🔍 Analizar flujos
+      </button>
+    </nav>
+
+    <!-- TAB 1: ALERTAS -->
+    <section id="tab-alertas" class="tab-panel active" role="tabpanel">
+      <div class="card">
+        <div class="card-header">
+          <h2>Alertas detectadas</h2>
+          <div class="filter-bar">
+            <label for="filter-attack-cat">Tipo:</label>
+            <select id="filter-attack-cat">
+              <option value="">Todos</option>
+              <option value="Analysis">Analysis</option>
+              <option value="Backdoor">Backdoor</option>
+              <option value="DoS">DoS</option>
+              <option value="Exploits">Exploits</option>
+              <option value="Fuzzers">Fuzzers</option>
+              <option value="Generic">Generic</option>
+              <option value="Reconnaissance">Reconnaissance</option>
+              <option value="Shellcode">Shellcode</option>
+              <option value="Worms">Worms</option>
+            </select>
+            <label for="filter-limit">Mostrar:</label>
+            <select id="filter-limit">
+              <option value="25">25</option>
+              <option value="50" selected>50</option>
+              <option value="100">100</option>
+            </select>
+            <button type="button" class="btn btn-secondary" id="btn-refresh-alerts">Actualizar</button>
+          </div>
+        </div>
+
+        <div id="alerts-category-chips" class="chips-bar"></div>
+
+        <div class="table-responsive">
+          <table class="data-table" id="alerts-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Fecha y hora</th>
+                <th>Tipo de ataque</th>
+                <th>Descripción</th>
+                <th>Protocolo / Servicio</th>
+                <th>Duración</th>
+                <th>Tráfico (enviado / recibido)</th>
+              </tr>
+            </thead>
+            <tbody id="alerts-tbody">
+              <tr>
+                <td colspan="7" class="empty-state">No hay alertas registradas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="helper-text mt-8" id="alerts-updated">La lista se actualiza automáticamente cada 5 s.</p>
+      </div>
+    </section>
+
+    <!-- TAB 2: ANALIZAR FLUJOS -->
+    <section id="tab-analizar" class="tab-panel" role="tabpanel">
+      <div class="panel-grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h2>Flujos a analizar</h2>
+            <div class="btn-group">
+              <label class="btn btn-secondary" for="file-input">Cargar archivo JSON</label>
+              <input type="file" id="file-input" accept=".json,application/json" class="hidden" />
+              <button type="button" class="btn btn-secondary" id="btn-load-example">Cargar ejemplo</button>
+            </div>
+          </div>
+          <p class="helper-text">
+            Pegue o cargue los flujos exportados en formato JSON (un flujo o una lista de flujos).
+          </p>
+          <textarea id="predict-json-input" rows="16" spellcheck="false" aria-label="Flujos en formato JSON"></textarea>
+          <div class="card-actions">
+            <button type="button" class="btn btn-primary" id="btn-run-predict">Analizar</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Resultado</h2>
+          </div>
+          <div id="predict-error-box" class="error-box hidden" role="alert"></div>
+          <div id="predict-summary-bar" class="summary-bar hidden">
+            <div>Flujos analizados: <strong id="res-count">0</strong></div>
+            <div>Ataques detectados: <strong id="res-attacks">0</strong></div>
+          </div>
+          <div id="predict-results-list" class="results-list">
+            <p class="empty-state">Cargue flujos y pulse «Analizar».</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>IDS — MVP interno</span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+[
+  {
+    "path": "data/processed_step2",
+    "bytes": 18553605,
+    "reason": "Matrices idénticas por SHA-256 a src/ids_preparado; reemplazadas por preparación final"
+  },
+  {
+    "path": "src/ids_preparado",
+    "bytes": 18553611,
+    "reason": "Preparación antigua sustituida por data/processed; métricas e inventario preservados"
+  },
+  {
+    "path": "src/ids_modelos",
+    "bytes": 293094149,
+    "reason": "Artefactos separados sustituidos por pipeline final validado; evidencia histórica preservada"
+  },
+  {
+    "path": "models/random_forest.joblib",
+    "bytes": 140480041,
+    "reason": "Modelo antiguo de particiones intercambiadas; no consumido por código actual; métricas históricas conservadas"
+  },
+  {
+    "path": "models/codificador_categorias_ataque.joblib",
+    "bytes": 569,
+    "reason": "Modelo antiguo de particiones intercambiadas; no consumido por código actual; métricas históricas conservadas"
+  },
+  {
+    "path": "models/xgboost.joblib",
+    "bytes": 5798069,
+    "reason": "Modelo antiguo de particiones intercambiadas; no consumido por código actual; métricas históricas conservadas"
+  },
+  {
+    "path": "reports/matriz_cascada.csv",
+    "bytes": 425,
+    "reason": "Reubicado sin pérdida en reports/historico/reports"
+  },
+  {
+    "path": "reports/predicciones_validacion.csv",
+    "bytes": 411384,
+    "reason": "Reubicado sin pérdida en reports/historico/reports"
+  },
+  {
+    "path": "reports/matriz_xgboost_condicional.csv",
+    "bytes": 363,
+    "reason": "Reubicado sin pérdida en reports/historico/reports"
+  },
+  {
+    "path": "reports/preparacion.log",
+    "bytes": 2632,
+    "reason": "Reubicado sin pérdida en reports/historico/reports"
+  },
+  {
+    "path": "reports/matriz_rf.csv",
+    "bytes": 47,
+    "reason": "Reubicado sin pérdida en reports/historico/reports"
+  },
+  {
+    "path": "reports/metricas_validacion.json",
+    "bytes": 5252,
+    "reason": "Reubicado sin pérdida en reports/historico/reports"
+  },
+  {
+    "path": "reports/historico/src_ids_preparado/columnas_transformadas.json",
+    "bytes": 3123,
+    "reason": "Evidencia histórica idéntica por SHA-256; copia conservada en reports/historico/data_processed_step2/columnas_transformadas.json"
+  },
+  {
+    "path": "reports/historico/src_ids_preparado/y_test.csv",
+    "bytes": 807513,
+    "reason": "Evidencia histórica idéntica por SHA-256; copia conservada en reports/historico/data_processed_step2/y_test.csv"
+  },
+  {
+    "path": "reports/historico/src_ids_preparado/y_train.csv",
+    "bytes": 1314683,
+    "reason": "Evidencia histórica idéntica por SHA-256; copia conservada en reports/historico/data_processed_step2/y_train.csv"
+  },
+  {
+    "path": "reports/historico/src_ids_preparado/y_val.csv",
+    "bytes": 328685,
+    "reason": "Evidencia histórica idéntica por SHA-256; copia conservada en reports/historico/data_processed_step2/y_val.csv"
+  },
+  {
+    "path": "src/__pycache__",
+    "bytes": 43515,
+    "reason": "Cache Python regenerable"
+  },
+  {
+    "path": "src/ids_ml/__pycache__",
+    "bytes": 16853,
+    "reason": "Cache Python regenerable"
+  },
+  {
+    "path": "tests/__pycache__",
+    "bytes": 15102,
+    "reason": "Cache Python regenerable"
+  }
+]
